@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "status": "COMPLETE — فهرست کامل دریافت شد (۶ ردیف)",
+    "source": "data/pm_consumables.md",
+    "pm_code_pattern": "{کد تجهیز}-پی‌ام-{شماره برنامه}"
+  },
+  "rows": [
+    {"pm_code": "B1P01-PM-20", "part_name": "روغن هیدرولیک", "quantity": 50, "unit": "لیتر", "interval_fa": "سالانه", "note": "مطابق برنامه «تعویض روغن هیدرولیک (هیدرومکس ۶۸)»"},
+    {"pm_code": "B1P01-PM-21", "part_name": "روغن گیربکس", "quantity": 20, "unit": "لیتر", "interval_fa": "سالانه", "note": "مطابق برنامه «تعویض روغن گیربکس/پمپ‌ها»"},
+    {"pm_code": "B1P02-PM-20", "part_name": "روغن هیدرولیک", "quantity": 50, "unit": "لیتر", "interval_fa": "سالانه", "note": "مطابق برنامه «تعویض روغن هیدرولیک»"},
+    {"pm_code": "B1P02-PM-21", "part_name": "روغن گیربکس", "quantity": 20, "unit": "لیتر", "interval_fa": "سالانه", "note": "مطابق برنامه «تعویض روغن گیربکس/پمپ‌ها»"},
+    {"pm_code": "B1P04-PM-05", "part_name": "گریس", "quantity": 2, "unit": "کیلوگرم", "interval_fa": "سه‌ماهه", "note": "مطابق برنامه «گریس‌کاری نقاط گریس‌خور و محورهای محرک»"},
+    {"pm_code": "B1P04-PM-06", "part_name": "روغن ماشین", "quantity": 10, "unit": "لیتر", "interval_fa": "سه‌ماهه", "note": "مطابق برنامه «روغن‌کاری نقاط روغن‌خور»"}
+  ]
+}

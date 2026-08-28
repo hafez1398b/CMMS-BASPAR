@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "status": "AWAITING_APPROVAL — تا تأیید حافظ بایرامیان ثبت نشود",
+    "source": "data/injection2_b1p02.md",
+    "factory": "بسپار۱",
+    "category": "ماشین‌آلات تولید",
+    "pm_origin_jalali": "1404-12-27",
+    "requester_approver": "مهندس علی جهان مرادی",
+    "note": "عنوان فایل «۲۱ فعالیت» است اما جدول ۲۵ ردیف دارد — هر ۲۵ ردیف مبنا قرار گرفت",
+    "assignment_rules": [
+      "نت مرکزی فقط برق (کاووسی) + روغن گیربکس (پیرایش)؛ بقیه مکانیک با تیم محلی",
+      "برق صنعتی بسپار۱ ← احمد کاووسی",
+      "سوابق از برج ۱۰ سال ۱۴۰۴ به بعد ← پوریا معافی پور",
+      "سوابق قبل از برج ۱۰: برق ← کاووسی / مکانیک ← نجات بابایی (مطابق رویه تأییدشدهٔ B1P01)"
+    ]
+  },
+  "equipment": {
+    "code": "B1P02",
+    "name": "دستگاه تزریق دو",
+    "model": "MAMIX 12/28-DV1218",
+    "manufacturer": null,
+    "country": "کره جنوبی",
+    "year_gregorian": 2015,
+    "year_jalali_note": "سال ساخت ۱۳۹۴ شمسی (≈ ۲۰۱۵ میلادی)",
+    "install_date_jalali": "1394-07-26",
+    "dept": "تولید فوم",
+    "criticality": "medium — مشابه B1P01؛ منتظر تعیین نهایی توسط مسئول نت",
+    "status": "active",
+    "component_type": "ماشین تزریق",
+    "technical_specs": {
+      "ظرفیت": "900 g/s (شناسنامه رسمی — مرجع نهایی)",
+      "ابعاد": "3.8m × 2m × 2.5m",
+      "افراد مجاز به استفاده": "مدیر کارخانه، مدیر تولید",
+      "شرح عملکرد": "مواد اولیه از مخازن به سیستم تزریق وارد شده و توسط این سیستم به ربات منتقل می‌گردد جهت تزریق در قالب‌ها",
+      "توضیح دوقلو": "این دستگاه دوقلوی B1P01 است — ساختار زیرسیستمی یکسان"
+    },
+    "dynamic_fields": {
+      "سال ساخت (شمسی)": "۱۳۹۴",
+      "تاریخ نصب (شمسی)": "۱۳۹۴-۰۷-۲۶",
+      "کد تابلو برق": "B1P2E05",
+      "یادداشت ظرفیت": "عدد ۵۰۰ گرم/ثانیه در پایگاه‌داده Access رد شد (مشابه تصمیم B1P01)؛ ۹۰۰ g/s مرجع نهایی"
+    }
+  },
+  "structure": [
+    {"name": "سیستم انتقال مواد", "components": [
+      {"name": "مخزن پلیول"}, {"name": "مخزن ایزو"}, {"name": "فیلتر پولیول"},
+      {"name": "فیلتر ایزو"}, {"name": "سیستم انتقال مواد"},
+      {"name": "پمپ مواد", "note": "از سوابق"}
+    ]},
+    {"name": "سیستم کنترل دما", "components": [
+      {"name": "دماسنج"}, {"name": "سیستم کنترل"}
+    ]},
+    {"name": "سیستم هیدرولیک", "components": [
+      {"name": "سیستم هیدرولیک"}, {"name": "پمپ هیدرولیک"}, {"name": "فیلتر هیدرولیک"},
+      {"name": "پک هیدرولیک", "note": "از سوابق — پرتکرارترین قطعه خراب"}
+    ]},
+    {"name": "سیستم پنوماتیک", "components": [
+      {"name": "سیستم پنوماتیک"},
+      {"name": "تله‌گیر هوا", "note": "از سوابق"},
+      {"name": "ریگلاتور هوا", "note": "از سوابق"}
+    ]},
+    {"name": "سیستم برق و کنترل", "components": [
+      {"name": "تابلو برق", "code_hint": "B1P2E05"},
+      {"name": "فشارسنج‌ها"}, {"name": "فلومتر جرمی"},
+      {"name": "سنسور پراکسی"},
+      {"name": "سنسور حد پایین سطح مواد", "note": "از سوابق"}
+    ]},
+    {"name": "سیستم ایمنی", "note": "⚠️ هیچ قطعه‌ای شناسایی نشد — نیازمند بازدید میدانی", "components": []},
+    {"name": "فریم و بدنه", "components": [{"name": "فریم و بدنه"}]},
+    {"name": "موتور و گیربکس", "components": [{"name": "الکتروموتور"}, {"name": "گیربکس"}]},
+    {"name": "سیستم خنک‌کننده", "components": [{"name": "سیستم خنک‌کننده"}]}
+  ],
+  "pm_plans": [
+    {"seq": 1, "title": "کنترل سیستم سرمایش", "subsystem": "سیستم خنک‌کننده", "interval": "daily", "performer": "نجات بابایی", "team": "محلی", "type": "inspection"},
+    {"seq": 2, "title": "چک وایرینگ و گیج", "subsystem": "سیستم برق و کنترل", "interval": "daily", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "inspection"},
+    {"seq": 3, "title": "چک پک هیدرولیک", "subsystem": "سیستم هیدرولیک", "interval": "daily", "performer": "پوریا معافی پور", "team": "محلی", "type": "inspection"},
+    {"seq": 4, "title": "چک پایپینگ", "subsystem": "سیستم انتقال مواد", "interval": "daily", "performer": "نجات بابایی", "team": "محلی", "type": "inspection"},
+    {"seq": 5, "title": "کنترل/نظافت فیلتر مواد", "subsystem": "سیستم انتقال مواد", "interval": "daily", "performer": "پوریا معافی پور", "team": "محلی", "type": "cleaning"},
+    {"seq": 6, "title": "کنترل شیرهای پنوماتیک/هیدرولیک", "subsystem": "پنوماتیک+هیدرولیک", "interval": "daily", "performer": "نجات بابایی", "team": "محلی", "type": "inspection"},
+    {"seq": 7, "title": "بازدید فیلترهای هیدرولیک پلیول/ایزو", "subsystem": "سیستم هیدرولیک", "interval": "daily", "performer": "پوریا معافی پور", "team": "محلی", "type": "inspection"},
+    {"seq": 8, "title": "روغن‌کاری قسمت‌های موردنیاز", "subsystem": "عمومی", "interval": "weekly", "performer": "نجات بابایی", "team": "محلی", "type": "lubrication"},
+    {"seq": 9, "title": "نظافت عمومی دستگاه", "subsystem": "عمومی", "interval": "weekly", "performer": "پوریا معافی پور", "team": "محلی", "type": "cleaning"},
+    {"seq": 10, "title": "کنترل تسمه‌ها", "subsystem": "موتور و گیربکس", "interval": "weekly", "performer": "نجات بابایی", "team": "محلی", "type": "inspection"},
+    {"seq": 11, "title": "بازدید روغن گیربکس‌ها/پمپ‌ها", "subsystem": "موتور و گیربکس", "interval": "monthly", "performer": "محسن پیرایش", "team": "نت مرکزی (روغن گیربکس)", "type": "inspection"},
+    {"seq": 12, "title": "بازدید روغن هیدرولیک/سیستم هیدرولیک", "subsystem": "سیستم هیدرولیک", "interval": "monthly", "performer": "پوریا معافی پور", "team": "محلی", "type": "inspection"},
+    {"seq": 13, "title": "نظافت فیلتر هیدرولیک", "subsystem": "سیستم هیدرولیک", "interval": "monthly", "performer": "نجات بابایی", "team": "محلی", "type": "cleaning"},
+    {"seq": 14, "title": "نظافت فیلتر پولیول", "subsystem": "سیستم انتقال مواد", "interval": "monthly", "performer": "پوریا معافی پور", "team": "محلی", "type": "cleaning"},
+    {"seq": 15, "title": "نظافت فیلتر ایزو", "subsystem": "سیستم انتقال مواد", "interval": "monthly", "performer": "نجات بابایی", "team": "محلی", "type": "cleaning"},
+    {"seq": 16, "title": "نظافت/آمپرگیری کلید و کابل", "subsystem": "سیستم برق و کنترل", "interval": "monthly", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "inspection"},
+    {"seq": 17, "title": "آچارکشی تخته‌کلم و پایه‌ها", "subsystem": "سیستم برق و کنترل", "interval": "3monthly", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "tightening"},
+    {"seq": 18, "title": "آچارکشی قطعات/اتصالات تابلو برق", "subsystem": "سیستم برق و کنترل", "interval": "3monthly", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "tightening"},
+    {"seq": 19, "title": "آچارکشی پایه موتورها", "subsystem": "موتور و گیربکس", "interval": "6monthly", "performer": "پوریا معافی پور", "team": "محلی", "type": "tightening"},
+    {"seq": 20, "title": "تعویض روغن هیدرولیک", "subsystem": "سیستم هیدرولیک", "interval": "yearly", "performer": "نجات بابایی", "team": "محلی", "type": "oil_change"},
+    {"seq": 21, "title": "تعویض روغن گیربکس/پمپ‌ها", "subsystem": "موتور و گیربکس", "interval": "yearly", "performer": "محسن پیرایش", "team": "نت مرکزی (روغن گیربکس)", "type": "oil_change"},
+    {"seq": 22, "title": "تست بوق کانکشن‌ها/کانتاکتورها", "subsystem": "سیستم برق و کنترل", "interval": "yearly", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "inspection"},
+    {"seq": 23, "title": "تست ضخامت‌سنجی مخازن", "subsystem": "سیستم انتقال مواد", "interval": "yearly", "performer": "پیمانکار خارجی (گستر اسپاد)", "team": "بیرونی", "type": "inspection"},
+    {"seq": 24, "title": "کالیبراسیون ابزار اندازه‌گیری", "subsystem": "سیستم کنترل دما", "interval": "yearly", "performer": "پیمانکار خارجی + حافظ بایرامیان", "team": "بیرونی", "type": "other"},
+    {"seq": 25, "title": "کنترل شیرهای هیدرولیک/اکچویتورها", "subsystem": "هیدرولیک+پنوماتیک", "interval": "yearly", "performer": "پوریا معافی پور", "team": "محلی", "type": "inspection"}
+  ],
+  "history": [
+    {"date": "1402-02-06", "part": "پک هیدرولیک", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی — تکنسین: رویه تأییدشدهٔ مکانیک قبل از برج ۱۰"},
+    {"date": "1402-08-27", "part": "پک هیدرولیک", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-10-10", "part": "پک هیدرولیک", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-10-10", "part": "سنسور پراکسی", "action": null, "tech": "a.kavousi", "basis": "برق ← کاووسی"},
+    {"date": "1402-10-10", "part": "شیر برقی انبار مواد", "action": null, "tech": "a.kavousi", "basis": "برق ← کاووسی"},
+    {"date": "1402-12-25", "part": "الکتروموتور", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "پک هیدرولیک", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "پمپ مواد", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "تابلو برق", "action": null, "tech": "a.kavousi", "basis": "برق ← کاووسی"},
+    {"date": "1402-12-25", "part": "تله‌گیر هوا", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "ریگلاتور هوا", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "شیر پنوماتیک", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "شیر هیدرولیکی", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "فیلترها", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1402-12-25", "part": "میکسرها", "action": null, "tech": "n.babaei", "basis": "اقدام در منبع خالی"},
+    {"date": "1403-02-27", "part": "فیلتر ایزو", "action": "نظافت", "tech": "n.babaei", "basis": "مکانیک قبل از برج ۱۰"},
+    {"date": "1403-05-24", "part": "کل دستگاه", "action": "بادگیری و آچارکشی", "tech": "n.babaei", "basis": "مکانیک قبل از برج ۱۰"},
+    {"date": "1403-05-24", "part": "سنسور حد پایین سطح مواد", "action": "رفع ایراد", "tech": "a.kavousi", "basis": "برق ← کاووسی"},
+    {"date": "1404-12-27", "part": "تله‌گیر", "action": "نظافت (تعمیرات پایان سال، بازه 1404-12-16 تا 27)", "tech": "p.moafipour", "basis": "قاعده قطعی: بعد از برج ۱۰ ۱۴۰۴"},
+    {"date": "1404-12-27", "part": "ریگلاتور هوا", "action": "سرویس (تعمیرات پایان سال)", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "میکسر", "action": "تست و مرتب‌سازی", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "شیر هیدرولیک", "action": "تست و مرتب‌سازی", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "شیر پنوماتیک", "action": "تست و مرتب‌سازی", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "پک هیدرولیک", "action": "نظافت، بازرسی، تعویض روغن", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "فیلتر مواد و روغن", "action": "نظافت", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "پمپ مواد", "action": "نظافت", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "شیرآلات", "action": "بازرسی و تعویض معیوب", "tech": "p.moafipour", "basis": "قاعده قطعی"},
+    {"date": "1404-12-27", "part": "مخزن پولیول", "action": "رنگ‌آمیزی", "tech": "p.moafipour", "basis": "قاعده قطعی"}
+  ],
+  "risk": {
+    "title": "خرابی مکرر پک هیدرولیک در هر دو دستگاه تزریق (B1P01 و B1P02) — الگوی مشترک خط تولید",
+    "kind": "risk",
+    "scope": "process",
+    "probability": 5,
+    "impact": 4,
+    "mitigation": "بررسی علت ریشه‌ای مشترک: کیفیت قطعه تأمین‌شده یا شرایط محیطی مشترک هر دو خط — پیگیری توسط مسئول نت",
+    "status": "open",
+    "source": "B1P01: ۵ تعویض در ۲۱ ماه + B1P02: ۴ تعویض در همان بازه (1402-02 تا 1402-12)"
+  },
+  "checklists_proposal": {
+    "چک‌لیست روزانه تزریق": [
+      "کنترل سیستم سرمایش (چیلر)", "چک وایرینگ و گیج‌ها", "چک پک هیدرولیک",
+      "چک پایپینگ انتقال مواد", "کنترل/نظافت فیلتر مواد",
+      "کنترل شیرهای پنوماتیک/هیدرولیک", "بازدید فیلترهای هیدرولیک پلیول/ایزو"
+    ],
+    "چک‌لیست ماهانه تزریق": [
+      "بازدید روغن گیربکس‌ها/پمپ‌ها", "بازدید روغن هیدرولیک/سیستم هیدرولیک",
+      "نظافت فیلتر هیدرولیک", "نظافت فیلتر پولیول", "نظافت فیلتر ایزو",
+      "نظافت/آمپرگیری کلید و کابل"
+    ]
+  }
+}

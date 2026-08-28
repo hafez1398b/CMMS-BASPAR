@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Runtime data (database, uploads, backups) — never commit
+storage/db/
+storage/uploads/
+storage/backups/
+storage/tmp/
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node (if frontend tooling is added later)
+node_modules/
+dist/
+.next/
