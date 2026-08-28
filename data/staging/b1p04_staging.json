@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "status": "AWAITING_APPROVAL — تا تأیید حافظ بایرامیان ثبت نشود",
+    "source": "data/injection_robot2_b1p04.md",
+    "factory": "بسپار۱",
+    "category": "ماشین‌آلات تولید",
+    "pm_origin_jalali": "1404-12-27",
+    "requester_approver": "مهندس علی جهان مرادی",
+    "source_corrections": [
+      "نام تجهیز از روی Access تصحیح شد: «ربات تزریق دو» (اکسل اشتباهاً ربات تزریق ۱ داشت)",
+      "ظرفیت 10 g/s از Access (در اکسل خالی بود)",
+      "تاریخ نصب 1394-07-26 از Access (در اکسل خالی بود)",
+      "سال ساخت در هیچ منبعی نیست — نامشخص نگه داشته شد"
+    ],
+    "insight": "الگوی توقف برنامه‌ریزی‌شده پایان سال ۱۴۰۲ (۱۴۰۲-۱۲-۲۵) با ۳ تجهیز مستقل تأیید شد — پیشنهاد ثبت به‌عنوان فرصت/یادداشت فرایندی پس از تأیید",
+    "assignment_rules": [
+      "مطابق فایل: مجریان هر دستورکار به‌صراحت ذکر شده‌اند",
+      "اپراتور خط تولید حساب کاربری ندارد — به‌صورت متنی در performer ثبت می‌شود"
+    ]
+  },
+  "equipment": {
+    "code": "B1P04",
+    "name": "ربات تزریق دو",
+    "model": "FANUC Robotics S-420F",
+    "manufacturer": "FANUC Robotics",
+    "country": "آمریکا",
+    "year_gregorian": null,
+    "year_note": "سال ساخت در هیچ منبعی ثبت نشده — نامشخص",
+    "install_date_jalali": "1394-07-26",
+    "dept": "تولید فوم",
+    "criticality": "medium — منتظر تعیین نهایی توسط مسئول نت",
+    "status": "active",
+    "component_type": "ربات تزریق",
+    "technical_specs": {
+      "ظرفیت": "10 g/s (از Access — در اکسل خالی بود)",
+      "ابعاد": "طول 3m × ارتفاع 3m",
+      "شرح عملکرد": "مواد اولیه در نازل این ربات با هم مخلوط و به داخل قالب‌ها تزریق می‌گردد",
+      "ملاحظات ایمنی": "کنترل محل قرارگیری نازل هنگام تزریق، جلوگیری از نشتی مواد"
+    },
+    "dynamic_fields": {
+      "تاریخ نصب (شمسی)": "۱۳۹۴-۰۷-۲۶",
+      "سال ساخت": "نامشخص — نیازمند تکمیل دستی",
+      "مدل در Access": "S-420",
+      "تصحیحات منبع": "نام، ظرفیت و تاریخ نصب از روی Access تصحیح شد"
+    }
+  },
+  "structure": [
+    {"name": "سیستم انتقال مواد", "components": [
+      {"name": "هد تزریق", "note": "در اکسل با فریم/بدنه ادغام شده بود — تفکیک شد"},
+      {"name": "نازل", "note": "از سوابق"}
+    ]},
+    {"name": "سیستم کنترل دما", "note": "⚠️ شناسایی نشد — بدون داده", "components": []},
+    {"name": "سیستم هیدرولیک", "components": [
+      {"name": "سیستم هیدرولیک"},
+      {"name": "شیلنگ‌های هیدرولیک و مواد"},
+      {"name": "جک‌های هیدرولیک"}
+    ]},
+    {"name": "سیستم پنوماتیک", "components": [
+      {"name": "سیستم پنوماتیک", "note": "از Access"}
+    ]},
+    {"name": "سیستم برق و کنترل", "components": [
+      {"name": "تابلوهای برق"},
+      {"name": "کنترل باکس", "note": "؟؟؟ شماره ۵ اکسل — از Access تکمیل شد"},
+      {"name": "نرم‌افزار"},
+      {"name": "سنسورها"}
+    ]},
+    {"name": "سیستم ایمنی", "note": "⚠️ شناسایی نشد — بدون داده", "components": []},
+    {"name": "فریم و بدنه", "components": [{"name": "فریم و بدنه"}]},
+    {"name": "موتور و گیربکس", "components": [
+      {"name": "سروموتورها", "note": "؟؟؟ شماره ۱ اکسل — تکمیل شد"},
+      {"name": "سرو درایوها"},
+      {"name": "محورهای متحرک"}
+    ]},
+    {"name": "سیستم خنک‌کننده", "components": [
+      {"name": "سیستم خنک‌کاری", "note": "از Access"}
+    ]}
+  ],
+  "pm_plans": [
+    {"seq": 1, "title": "کنترل شیلنگ‌های تزریق و هیدرولیک", "subsystem": "هیدرولیک+انتقال مواد", "interval": "daily", "performer": "اپراتور خط تولید", "team": "عملیاتی", "type": "inspection"},
+    {"seq": 2, "title": "کنترل سنسورها و کالیبراسیون", "subsystem": "سیستم برق و کنترل", "interval": "daily", "performer": "اپراتور خط تولید", "team": "عملیاتی", "type": "inspection"},
+    {"seq": 3, "title": "کنترل وایرینگ", "subsystem": "سیستم برق و کنترل", "interval": "daily", "performer": "اپراتور خط تولید", "team": "عملیاتی", "type": "inspection"},
+    {"seq": 4, "title": "کنترل نشتی و کنترل‌های کلی", "subsystem": "عمومی", "interval": "daily", "performer": "اپراتور خط تولید", "team": "عملیاتی", "type": "inspection"},
+    {"seq": 5, "title": "گریس‌کاری نقاط گریس‌خور و محورهای محرک", "subsystem": "موتور و گیربکس", "interval": "3monthly", "performer": "پوریا معافی پور", "team": "محلی", "type": "lubrication"},
+    {"seq": 6, "title": "روغن‌کاری نقاط روغن‌خور", "subsystem": "عمومی", "interval": "3monthly", "performer": "نجات بابایی", "team": "محلی", "type": "lubrication"},
+    {"seq": 7, "title": "بادگیری و نظافت تابلوهای برق", "subsystem": "سیستم برق و کنترل", "interval": "3monthly", "performer": "احمد کاووسی", "team": "نت مرکزی (برق)", "type": "cleaning"},
+    {"seq": 8, "title": "آچارکشی پایه‌ها و قطعات محرک", "subsystem": "موتور و گیربکس", "interval": "custom", "performer": "نجات بابایی", "team": "محلی", "type": "tightening", "flag": "تناوب در مبدأ ثبت نشده — نیازمند تعیین توسط مسئول نت"}
+  ],
+  "work_orders": [
+    {"wo": "B1P04-WO-01", "date": "1402-04-20", "part": "شیلنگ هیدرولیک", "action": "بازرسی/اقدام", "note": "جزئیات ناقص در مبدأ", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-02", "date": "1402-08-29", "part": "هد تزریق", "action": "بازرسی/اقدام", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-03", "date": "1402-08-29", "part": "هد تزریق", "action": "بازرسی/اقدام", "note": "تکراری با ردیف بالا در مبدأ — عیناً حفظ شد", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-04", "date": "1402-10-12", "part": "هیدرولیک", "action": "بازرسی", "class": "pm", "tech": "n.babaei"},
+    {"wo": "B1P04-WO-05", "date": "1402-12-25", "part": "نازل", "action": "بازرسی/اقدام", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-06", "date": "1402-12-25", "part": "جک‌ها و گریس‌خورها", "action": "روانکاری مفاصل متحرک", "class": "pm", "tech": "n.babaei"},
+    {"wo": "B1P04-WO-07", "date": "1402-11-25", "part": "سروموتور", "action": "بازرسی/اقدام (تخصصی)", "class": "em", "tech": "m.pirayesh"},
+    {"wo": "B1P04-WO-08", "date": "1402-12-25", "part": "سروموتورها", "action": "بازرسی/اقدام", "class": "pm", "tech": "m.pirayesh"},
+    {"wo": "B1P04-WO-09", "date": "1402-12-25", "part": "سنسورها", "action": "بادگیری", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-10", "date": "1402-11-28", "part": "سوکت‌ها", "action": "تعویض", "class": "em", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-11", "date": "1402-12-25", "part": "سیم‌بندی", "action": "مرتب‌سازی", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-12", "date": "1402-12-25", "part": "شیر هیدرولیکی", "action": "تعویض", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-13", "date": "1402-12-25", "part": "شیلنگ مواد", "action": "تعویض پرس", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-14", "date": "1402-12-25", "part": "شیلنگ هیدرولیک", "action": "تعویض پرس", "class": "em", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-15", "date": "1402-12-25", "part": "ضربه‌گیرها", "action": "تعویض بابت فرسودگی", "class": "em", "tech": "n.babaei"},
+    {"wo": "B1P04-WO-16", "date": "1402-12-25", "part": "عمومی", "action": "کنترل تمامی موارد حفاظتی دستگاه", "class": "pm", "tech": "h.bayramian"},
+    {"wo": "B1P04-WO-17", "date": "1404-07-30", "part": "تابلو برق", "action": "آچارکشی و بادگیری", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-18", "date": "1404-08-15", "part": "وایرینگ‌ها", "action": "کنترل", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-19", "date": "1404-12-27", "part": "سنسور", "action": "نظافت (تعمیرات پایان سال، بازه 1404-12-16 تا 27)", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-20", "date": null, "part": "شیلنگ‌های فشار قوی", "action": "بازرسی", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-21", "date": null, "part": "عمومی", "action": "روانکاری", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "n.babaei"},
+    {"wo": "B1P04-WO-22", "date": null, "part": "ضربه‌گیر", "action": "تعویض", "note": "بدون تاریخ در مبدأ", "class": "em", "tech": "n.babaei"},
+    {"wo": "B1P04-WO-23", "date": null, "part": "سروموتورها", "action": "نظافت", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "m.pirayesh"},
+    {"wo": "B1P04-WO-24", "date": null, "part": "سیم‌بندی", "action": "مرتب‌سازی", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "a.kavousi"},
+    {"wo": "B1P04-WO-25", "date": null, "part": "هد تزریق", "action": "نظافت", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "p.moafipour"},
+    {"wo": "B1P04-WO-26", "date": null, "part": "شیرهای هیدرولیکی", "action": "نظافت", "note": "بدون تاریخ در مبدأ", "class": "pm", "tech": "p.moafipour"}
+  ],
+  "checklists_proposal": {
+    "چک‌لیست روزانه ربات تزریق": [
+      "کنترل شیلنگ‌های تزریق و هیدرولیک", "کنترل سنسورها و کالیبراسیون",
+      "کنترل وایرینگ", "کنترل نشتی و کنترل‌های کلی",
+      "کنترل محل قرارگیری نازل هنگام تزریق"
+    ]
+  }
+}

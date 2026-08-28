@@ -1,0 +1,37 @@
+# BASPAR CMMS — deployment composition (§50, §60).
+#
+# Default profile: single app service + SQLite on a volume (Phase 0/1).
+# `postgres` profile: central PostgreSQL for multi-server scale-out.
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT:-production}
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env (openssl rand -hex 32)}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/storage/db/cmms.db}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Admin@12345}
+    volumes:
+      - cmms-storage:/app/storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=5).status==200 else 1)"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+
+  # --- Optional central database (Phase 1+ scale-out) ---
+  # db:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_DB: cmms
+  #     POSTGRES_USER: cmms
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #   volumes: [ "pg-data:/var/lib/postgresql/data" ]
+  # Then set: DATABASE_URL=postgresql+psycopg://cmms:${POSTGRES_PASSWORD}@db:5432/cmms
+
+volumes:
+  cmms-storage:
+  # pg-data:
