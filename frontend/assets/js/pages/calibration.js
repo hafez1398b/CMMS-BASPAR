@@ -1,8 +1,8 @@
 /** Calibration (§29). */
 import {
   api, errText, h, faNum, toast, openModal, spinner, Session, jalaliInput,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const RESULT_FA = { pass: 'قبول', fail: 'مردود', adjusted: 'نیازمند تنظیم' };
 

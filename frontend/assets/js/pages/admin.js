@@ -3,8 +3,8 @@
 import {
   api, errText, h, faNum, toast, openModal, confirmDialog, spinner,
   Session, table, pager, downloadUrl, fmtBytes,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 /* ================================================================== *
  * USERS

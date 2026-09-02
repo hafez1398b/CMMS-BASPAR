@@ -1,7 +1,7 @@
 /** ویزارد افزودن تجهیز — ۹ مرحله (§6). Clean rewrite. */
-import { Session, api, errText, h, navigate, toast, faNum, faToEnDigits } from '../core.js?v=11';
-import { icon } from '../icons.js?v=11';
-import { enableVoiceInputs } from '../voice.js?v=11';
+import { Session, api, errText, h, navigate, toast, faNum, faToEnDigits } from '../core.js?v=12';
+import { icon } from '../icons.js?v=12';
+import { enableVoiceInputs } from '../voice.js?v=12';
 
 const CRIT_FA = { low: 'کم', medium: 'متوسط', high: 'زیاد', critical: 'بحرانی' };
 const STEPS = ['شناسایی', 'اطلاعات فنی', 'ساختار', 'برنامه نت', 'چک‌لیست', 'اسناد', 'کالیبراسیون', 'بحرانی‌بودن/ریسک', 'تأیید'];

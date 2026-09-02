@@ -1,0 +1,182 @@
+/* ==========================================================================
+   BASPAR — طراحی نهایی (Design Language §5/§6 MASTER PROMPT)
+   Industrial · Professional · Modern · Minimal · Enterprise — RTL
+   ========================================================================== */
+
+/* ---------- فونت وزیرمتن (قبلاً فقط نام بود، حالا واقعاً لود می‌شود) ---------- */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/assets/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --c-primary: #1d4ed8;
+  --c-primary-dark: #1e40af;
+  --c-primary-soft: #eef4ff;
+  --c-accent: #f59e0b;            /* safety amber — industrial accent */
+  --c-sidebar: #0b1220;
+  --c-sidebar-2: #16203a;
+  --font: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  --radius-lg: 14px;
+  --shadow-2: 0 6px 20px rgba(15, 23, 42, .08);
+}
+
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  font-family: var(--font);
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(29, 78, 216, .06), transparent 60%),
+    var(--c-bg);
+  letter-spacing: 0;
+}
+h1 { letter-spacing: -.2px; }
+h1, h2, h3, .kpi .kpi-value, .brand { font-weight: 700; }
+
+/* ---------- اسکرول‌بار صنعتی ---------- */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: #c3cddd; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+*::-webkit-scrollbar-thumb:hover { background-color: #93a3bc; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- هدر ---------- */
+.app-shell > header {
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: 0 1px 0 rgba(15,23,42,.03);
+}
+.brand .brand-mark {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%);
+  box-shadow: 0 4px 12px rgba(29,78,216,.35);
+  border-radius: 9px;
+}
+.brand small { display: block; font-size: 10px; color: var(--c-text-3); font-weight: 500; margin-top: -2px; }
+
+/* ---------- سایدبار ---------- */
+aside.sidebar {
+  background: linear-gradient(180deg, var(--c-sidebar) 0%, #0d1526 100%);
+}
+.nav-section {
+  font-size: 10px; color: #5b6b85; font-weight: 700;
+  padding: 14px 14px 6px; letter-spacing: .8px;
+}
+.nav-item {
+  color: #aeb9cc; border-radius: 10px; margin: 1px 6px; padding: 9px 12px;
+  position: relative; transition: background .15s, color .15s;
+}
+.nav-item:hover { background: var(--c-sidebar-2); color: #fff; }
+.nav-item.active {
+  background: linear-gradient(90deg, rgba(29,78,216,.9), rgba(14,165,233,.75));
+  color: #fff; box-shadow: 0 4px 14px rgba(29,78,216,.35);
+}
+.nav-item.active::before {
+  content: ""; position: absolute; inset-inline-start: -6px; top: 8px; bottom: 8px;
+  width: 3px; border-radius: 3px; background: var(--c-accent);
+}
+.nav-item .nav-icon { display: inline-flex; width: 20px; height: 20px; }
+.nav-item .nav-icon svg { width: 18px; height: 18px; }
+.sidebar-foot { color: #5b6b85; font-size: 11px; }
+
+/* ---------- کارت‌ها و KPI ---------- */
+.card { border-radius: var(--radius-lg); border-color: #e5eaf2; }
+.card .card-head h2 { font-size: 14.5px; }
+.kpi { border-radius: var(--radius-lg); transition: transform .15s, box-shadow .15s; }
+.kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+.kpi .kpi-value { font-variant-numeric: tabular-nums; letter-spacing: -.5px; }
+.kpi .kpi-icon {
+  position: absolute; inset-inline-end: 14px; top: 14px;
+  width: 34px; height: 34px; border-radius: 10px; display: inline-flex;
+  align-items: center; justify-content: center; color: var(--c-primary);
+  background: var(--c-primary-soft);
+}
+.kpi.success .kpi-icon { color: var(--c-success); background: var(--c-success-soft); }
+.kpi.warning .kpi-icon { color: var(--c-warning); background: var(--c-warning-soft); }
+.kpi.danger  .kpi-icon { color: var(--c-danger);  background: var(--c-danger-soft); }
+.kpi.info    .kpi-icon { color: var(--c-info);    background: var(--c-info-soft); }
+.kpi .kpi-icon svg { width: 18px; height: 18px; }
+
+/* ---------- جدول‌ها ---------- */
+table.table thead th {
+  background: #f6f8fb; position: sticky; top: 0; z-index: 1;
+  border-bottom: 1px solid #dde4ee;
+}
+table.table tbody tr:nth-child(even) { background: #fbfcfe; }
+table.table tbody tr:hover { background: var(--c-primary-soft); }
+
+/* ---------- دکمه‌ها ---------- */
+.btn { border-radius: 10px; font-weight: 600; }
+.btn-primary {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 4px 12px rgba(29,78,216,.28);
+}
+.btn-primary:hover:not(:disabled) { background: linear-gradient(135deg, #1e40af, #1d4ed8); }
+.btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+/* ---------- ورود (Login) — بازطراحی دوپنلی ---------- */
+.login-wrap {
+  background:
+    radial-gradient(900px 480px at 15% 10%, rgba(29,78,216,.25), transparent 55%),
+    radial-gradient(700px 420px at 90% 90%, rgba(14,165,233,.18), transparent 60%),
+    linear-gradient(150deg, #0b1220 0%, #101c36 100%);
+}
+.login-card {
+  max-width: 880px; display: grid; grid-template-columns: 1.1fr 1fr;
+  overflow: hidden; padding: 0; background: #fff;
+}
+.login-brand {
+  background: linear-gradient(160deg, #0b1220, #12234a);
+  color: #dbe4f5; padding: 40px 34px; display: flex; flex-direction: column;
+  justify-content: space-between; position: relative; overflow: hidden;
+}
+.login-brand::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+  background-size: 26px 26px;   /* blueprint grid — industrial */
+}
+.login-brand > * { position: relative; z-index: 1; }
+.login-brand .logo-row { display: flex; align-items: center; gap: 12px; }
+.login-brand .logo-mark {
+  width: 46px; height: 46px; border-radius: 12px; display: inline-flex;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 8px 24px rgba(29,78,216,.45);
+}
+.login-brand .logo-mark svg { width: 26px; height: 26px; color: #fff; }
+.login-brand h1 { color: #fff; font-size: 21px; margin-top: 18px; }
+.login-brand p { color: #9fb0cc; font-size: 13px; line-height: 2; }
+.login-feats { display: grid; gap: 10px; margin-top: 18px; }
+.login-feats span { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #b9c6dd; }
+.login-feats svg { width: 15px; height: 15px; color: var(--c-accent); flex-shrink: 0; }
+.login-form { padding: 42px 36px; }
+.login-form h2 { font-size: 17px; margin-bottom: 4px; }
+.login-form .sub { color: var(--c-text-3); font-size: 12.5px; margin-bottom: 22px; }
+@media (max-width: 760px) {
+  .login-card { grid-template-columns: 1fr; max-width: 440px; }
+  .login-brand { display: none; }
+}
+
+/* ---------- تب‌ها ---------- */
+.tabs { gap: 4px; }
+.tab { border-radius: 8px 8px 0 0; font-size: 13px; }
+.tab.active { color: var(--c-primary); }
+
+/* ---------- نشان وضعیت اتصال ---------- */
+.conn-pill { font-weight: 700; }
+
+/* ---------- چاپ ---------- */
+@media print {
+  body { background: #fff; }
+  .passport-doc .card { border: 1px solid #94a3b8; }
+}

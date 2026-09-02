@@ -1,8 +1,8 @@
 /** Inspection Checklists (§15): templates, execution, escalation. */
 import {
   api, errText, h, faNum, toast, openModal, spinner, navigate, Session,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const RESULT_META = {
   ok: ['success', 'سالم'], not_ok: ['danger', 'نامطلوب'],

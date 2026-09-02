@@ -6,7 +6,7 @@
  *     voice note via MediaRecorder and hands the audio File to the
  *     caller (attached as a voice-note file), with a clear status toast.
  *  The button is ALWAYS visible so the feature is discoverable. */
-import { toast } from './core.js?v=11';
+import { toast } from './core.js?v=12';
 
 export function addVoiceInput(target, onAudio) {
   const btn = document.createElement('button');

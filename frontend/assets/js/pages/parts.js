@@ -1,7 +1,7 @@
 /** Inventory parts (§23 gateway) + SELEN critical-parts view (§24). */
 import {
   api, errText, h, faNum, toast, openModal, confirmDialog, spinner, Session, downloadUrl,
-} from '../core.js?v=11';
+} from '../core.js?v=12';
 
 const CRIT_FA = { low: 'کم', medium: 'متوسط', high: 'زیاد', critical: 'بحرانی' };
 const CRIT_BADGE = { low: 'neutral', medium: 'info', high: 'warning', critical: 'danger' };

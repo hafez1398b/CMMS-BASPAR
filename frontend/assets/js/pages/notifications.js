@@ -1,6 +1,6 @@
 /** Notification Center (§31). */
-import { api, errText, h, faNum, toast, spinner, pager, navigate } from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+import { api, errText, h, faNum, toast, spinner, pager, navigate } from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const KIND_ICON = { request: '📨', workorder: '🛠', pm: '🗓', system: '⚙', approval: '✔' };
 

@@ -2,7 +2,7 @@
  *  Excel/Markdown → Preview + Validation → Confirm → Rollback. */
 import {
   api, errText, h, faNum, toast, confirmDialog, downloadUrl, toJalaliStr,
-} from '../core.js?v=11';
+} from '../core.js?v=12';
 
 const MD_SAMPLE = `| کد تجهیز | نام تجهیز | سطح | کارخانه | دسته‌بندی | نوع قطعه | درجه اهمیت |
 |---|---|---|---|---|---|---|

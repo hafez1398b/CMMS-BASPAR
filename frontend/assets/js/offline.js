@@ -7,7 +7,7 @@
  * applies idempotent dedupe (local_id) and detects version conflicts
  * without ever overwriting the server record.
  */
-import { api, Session } from './core.js?v=11';
+import { api, Session } from './core.js?v=12';
 
 const KEY = 'cmms_offline_queue';
 

@@ -2,8 +2,8 @@
 import {
   api, errText, h, faNum, toast, openModal, spinner, table, pager,
   Session, navigate,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const STATUS_BADGE = {
   pending_supervisor: ['warning', 'در انتظار سرپرست'],

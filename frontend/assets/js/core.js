@@ -5,7 +5,7 @@
 import {
   toJalaliStr, todayJalali, JALALI_MONTHS, WEEKDAYS_FA,
   jalaliMonthLength, jalaliToGregorian, gregorianToJalali,
-} from './jalali.js?v=11';
+} from './jalali.js?v=12';
 export { toJalaliStr };
 
 /* --------------------------------------------------------------------- *

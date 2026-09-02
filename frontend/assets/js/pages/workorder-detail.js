@@ -3,11 +3,11 @@
 import {
   api, errText, h, faNum, toast, openModal, confirmDialog, spinner,
   Session, navigate, fmtBytes, downloadUrl,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
-import { WO_STATUS } from './workorders.js?v=11';
-import { enqueue, offlineQueue, flushQueue, pendingCount } from '../offline.js?v=11';
-import { addVoiceInput } from '../voice.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
+import { WO_STATUS } from './workorders.js?v=12';
+import { enqueue, offlineQueue, flushQueue, pendingCount } from '../offline.js?v=12';
+import { addVoiceInput } from '../voice.js?v=12';
 
 const PRIO_BADGE = { low: 'neutral', normal: 'info', high: 'warning', emergency: 'danger' };
 

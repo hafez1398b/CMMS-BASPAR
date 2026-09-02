@@ -1,8 +1,8 @@
 /** گزارش‌ساز پیشرفته (§26/§27) — فیلترهای زیاد: کارخانه/دسته(همه کارخانه‌ها)/
  *  نوع قطعه(پمپ/تابلو برق/دینام…)/قسمت/سالن/تجهیز/اهمیت/وضعیت/بازه تاریخ.
  *  دو گزارش: تجهیزات و دستور کارها + خروجی CSV/Excel. */
-import { api, errText, h, faNum, toast, spinner, jalaliInput, downloadUrl, critBadge, statusBadge } from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+import { api, errText, h, faNum, toast, spinner, jalaliInput, downloadUrl, critBadge, statusBadge } from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const CRIT_FA = { low: 'کم', medium: 'متوسط', high: 'زیاد', critical: 'بحرانی' };
 

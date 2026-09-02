@@ -147,6 +147,10 @@ def create_app() -> FastAPI:
     async def spa(request: Request, full_path: str):
         if full_path.startswith("api/"):
             return JSONResponse({"detail": "Not found"}, status_code=404)
+        # Serve any real file in frontend root (e.g. mobile-test.html) if it exists
+        candidate = FRONTEND_DIR / full_path
+        if full_path and candidate.is_file() and candidate.resolve().is_relative_to(FRONTEND_DIR.resolve()):
+            return FileResponse(candidate)
         return FileResponse(FRONTEND_DIR / "index.html")
 
     return app

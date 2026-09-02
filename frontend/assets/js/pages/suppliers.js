@@ -2,8 +2,8 @@
 import {
   api, errText, h, faNum, toast, openModal, confirmDialog, spinner,
   Session, table,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 export async function renderSuppliers(main) {
   main.replaceChildren(h('div', { class: 'page-head' }, h('h1', {}, 'تأمین‌کنندگان')), spinner());

@@ -1,7 +1,7 @@
 /** Internal consultation / in-app messenger (§32 core — independent of
  *  any external service; external channels are add-ons only §32B). */
-import { api, errText, h, toast, spinner, navigate } from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+import { api, errText, h, toast, spinner, navigate } from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 export async function renderConsultation(main) {
   main.replaceChildren(

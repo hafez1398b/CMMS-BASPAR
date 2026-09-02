@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تست موبایل - BASPAR CMMS</title>
+<style>
+body{font-family:system-ui;max-width:480px;margin:0 auto;padding:20px;background:#f8fafc}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:16px}
+input{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:8px 0;font-size:16px}
+button{width:100%;padding:14px;background:#2563eb;color:#fff;border:0;border-radius:10px;font-size:16px;font-weight:700}
+pre{white-space:pre-wrap;word-break:break-all;background:#f1f5f9;padding:12px;border-radius:10px;font-size:12px;max-height:300px;overflow:auto}
+.ok{color:#16a34a}.err{color:#dc2626}
+a{color:#2563eb}
+</style>
+</head>
+<body>
+<h2>🧪 تست اتصال موبایل BASPAR</h2>
+<div class="card">
+<div>سرور: <span id="origin"></span></div>
+<div>وضعیت: <span id="health">در حال بررسی...</span></div>
+</div>
+<div class="card">
+<h3>ورود</h3>
+<input id="u" value="admin" placeholder="نام کاربری">
+<input id="p" value="Admin@12345" type="password" placeholder="رمز">
+<button onclick="doLogin()">ورود و تست API</button>
+<pre id="out"></pre>
+</div>
+<div class="card">
+<h3>لینک‌های مستقیم</h3>
+<p><a href="/">صفحه اصلی SPA</a></p>
+<p><a href="/api/docs">API Docs (Swagger)</a></p>
+<p><a href="/api/health">/api/health</a></p>
+<p><a href="/api/auth/me?token=TEST">تست احراز هویت با توکن</a></p>
+</div>
+<script>
+document.getElementById('origin').textContent = location.origin;
+async function checkHealth(){
+  try{
+    const r = await fetch('/api/health');
+    const j = await r.json();
+    document.getElementById('health').innerHTML = '<span class="ok">✅ '+JSON.stringify(j)+'</span>';
+  }catch(e){
+    document.getElementById('health').innerHTML = '<span class="err">❌ '+e.message+'</span>';
+  }
+}
+async function doLogin(){
+  const out = document.getElementById('out');
+  out.textContent = 'در حال ورود...';
+  try{
+    const r = await fetch('/api/auth/login',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({username: document.getElementById('u').value, password: document.getElementById('p').value})
+    });
+    const data = await r.json();
+    out.textContent = 'login status: '+r.status+'\n'+JSON.stringify(data,null,2);
+    if(!r.ok) return;
+    const token = data.access_token;
+    // test me with header
+    const r2 = await fetch('/api/auth/me',{
+      headers:{'Authorization':'Bearer '+token}
+    });
+    const j2 = await r2.json();
+    out.textContent += '\n\n/me with header '+r2.status+':\n'+JSON.stringify(j2,null,2).slice(0,2000);
+    // test me with query
+    const r3 = await fetch('/api/auth/me?token='+encodeURIComponent(token));
+    const j3 = await r3.json();
+    out.textContent += '\n\n/me with query '+r3.status+':\n'+JSON.stringify(j3,null,2).slice(0,2000);
+    out.textContent += '\n\n✅ اگر هر دو 200 بود، سامانه سالمه. حالا برو به صفحه اصلی: '+location.origin+'/';
+  }catch(e){
+    out.textContent = '❌ خطا: '+e.message+'\n'+e.stack;
+  }
+}
+checkHealth();
+</script>
+</body>
+</html>

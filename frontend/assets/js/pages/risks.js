@@ -1,8 +1,8 @@
 /** Risk & Opportunity register (§28). */
 import {
   api, errText, h, faNum, toast, openModal, confirmDialog, spinner, Session, jalaliInput,
-} from '../core.js?v=11';
-import { toJalaliStr } from '../jalali.js?v=11';
+} from '../core.js?v=12';
+import { toJalaliStr } from '../jalali.js?v=12';
 
 const STATUS_FA = { open: 'باز', mitigating: 'در حال کنترل', closed: 'بسته', realized: 'محقق‌شده' };
 
